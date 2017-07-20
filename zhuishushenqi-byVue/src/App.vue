@@ -5,7 +5,8 @@
     <div id="app">
       <Gheader></Gheader>
       <Bookshelf></Bookshelf>
-      <Menu></Menu>
+      <NovelClass></NovelClass>
+      <MenuName></MenuName>
     </div>
     <div class="cover"></div>
   </div>
@@ -14,7 +15,8 @@
 <script>
   import Header from './components/Header'
   import Bookshelf from './components/Bookshelf'
-  import Menu from './components/Menu'
+  import MenuName from './components/MenuName'
+  import NovelClass from './components/NovelClass'
   export default {
     name: 'app',
     data() {
@@ -23,7 +25,8 @@
     components: {
       Bookshelf,
       Gheader: Header,
-      Menu,
+      MenuName,
+      NovelClass,
     }
   }
 </script>

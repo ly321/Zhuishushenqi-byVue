@@ -11,7 +11,7 @@ export function getNovelClass() {
 }
 
 //获取分类小说列表
-export function getNovelClass(gender, type, major, minor, start, limit) {
+export function getNovelList(gender, type, major, minor, start, limit) {
     return axios.get(`${url}/book/by-categories?gender=${gender}&type=${type}&major=${major}&minor=${minor}&start=${start}&limit=${limit}`).then((res) => {
         return res.data;
     }).catch((err) => {

@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div class="menuName">
       <div class="menuItem">
           <img src="../assets/book.svg" alt="">
           <p>书架</p>
@@ -20,7 +20,7 @@
 </template>
 <script>
     export default {
-        name: 'menu',
+        name: 'menuName',
         data() {
             return {
 
@@ -29,7 +29,7 @@
     }
 </script>
 <style>
-    .menu {
+    .menuName {
         width: 100%;
         height: 55px;
          /* position: fixed;  */
