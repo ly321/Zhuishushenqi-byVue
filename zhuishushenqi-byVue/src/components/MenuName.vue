@@ -1,18 +1,18 @@
 <template>
   <div class="menuName">
-      <div class="menuItem">
+      <div class="menuItem" @click="bookshelf()">
           <img src="../assets/book.svg" alt="">
           <p>书架</p>
       </div>
-        <div class="menuItem">
+        <div class="menuItem" @click="bookclass()">
           <img src="../assets/category.svg" alt="">
           <p>分类</p>
       </div>
-        <div class="menuItem">
+        <div class="menuItem" @click="rank()">
           <img src="../assets/rank.svg" alt="">
           <p>排行</p>
       </div>
-        <div class="menuItem">
+        <div class="menuItem" @click="search()">
           <img src="../assets/search.svg" alt="">
           <p>搜索</p>
       </div>
@@ -25,6 +25,20 @@
             return {
 
             }
+        },
+        methods:{
+            bookshelf(){
+                this.$store.commit('UPDATEBOOKSHELF');
+            },
+            bookclass(){
+                this.$store.commit('UPDATEBOOKCLASS');
+            },
+            rank(){
+                this.$store.commit('UPDATERANK');
+            },
+            search(){
+                this.$store.commit('UPDATESEARCH');
+            }
         }
     }
 </script>
@@ -32,7 +46,7 @@
     .menuName {
         width: 100%;
         height: 55px;
-         /* position: fixed;  */
+          position: fixed;  
         background-color: #eee;
     }
     

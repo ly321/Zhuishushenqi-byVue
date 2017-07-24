@@ -19,6 +19,8 @@
     width: 100%;
     height: 50px;
     background-color: #00a2ea;
+     position: fixed;
+     top: 0;
 }
 .header>p{
     color: #ffffff;

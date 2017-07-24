@@ -3,9 +3,9 @@
     <div class="cover">
     </div>
     <div id="app">
-      <Gheader></Gheader>
-      <Bookshelf></Bookshelf>
-      <NovelClass></NovelClass>
+      <Gheader ></Gheader>
+      <Bookshelf :class="bookshelf?'':'hide'"></Bookshelf>
+      <NovelClass :class="bookclass?'':'hide'"></NovelClass>
       <MenuName></MenuName>
     </div>
     <div class="cover"></div>
@@ -27,7 +27,15 @@
       Gheader: Header,
       MenuName,
       NovelClass,
-    }
+    },
+     computed: {
+            bookshelf(){
+                return this.$store.state.menuName.bookshelf;
+            },
+            bookclass(){
+              return this.$store.state.menuName.bookclass;
+            }
+        },
   }
 </script>
 
@@ -46,6 +54,8 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    overflow-x: hidden;
+    margin-top: 50px;
   }
   @media (max-width: 414px) {
     .cover {
@@ -62,5 +72,8 @@
     #app {
       width: 414px;
     }
+  }
+  .hide{
+    display: none;
   }
 </style>
