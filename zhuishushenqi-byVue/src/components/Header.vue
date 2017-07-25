@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <p>书架</p>
+        <p>{{title}}</p>
     </div>
 </template>
 <script>
@@ -9,6 +9,11 @@
         data() {
             return {
 
+            }
+        },
+        computed:{
+            title(){
+                return this.$store.state.header.title;
             }
         }
     }
@@ -19,10 +24,14 @@
     width: 100%;
     height: 50px;
     background-color: #00a2ea;
-     position: fixed;
-     top: 0;
+    top: 0;
 }
 .header>p{
     color: #ffffff;
+}
+@media (max-width: 414px) {
+    .header{
+        position: fixed;
+    }
 }
 </style>

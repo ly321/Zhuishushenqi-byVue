@@ -23,5 +23,7 @@
         border: 1px solid #00a2ea;
         border-radius: 5%;
         color: #ffffff;
+        position: fixed;
+        top: 50%;
     }
 </style>

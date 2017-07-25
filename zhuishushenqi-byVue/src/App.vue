@@ -56,6 +56,7 @@
     width: 100%;
     overflow-x: hidden;
     margin-top: 50px;
+    margin-bottom: 60px;
   }
   @media (max-width: 414px) {
     .cover {
@@ -71,6 +72,8 @@
     }
     #app {
       width: 414px;
+      margin-top: 0;
+      overflow-y: hidden;
     }
   }
   .hide{

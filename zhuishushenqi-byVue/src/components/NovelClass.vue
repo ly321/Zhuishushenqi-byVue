@@ -60,16 +60,20 @@
     .novelClass {
         width: 100%;
         height: inherit;
-      flex-direction: column;
+        flex-direction: column;
+        justify-content: flex-start;
     }
     .novelClass>.novelList {
         flex-direction: column;
-        
+        display: block;
+        margin-top: 10px;
+
     }
     .novelClass>.novelList>p {
         line-height: 2rem;
         margin: 0 1rem;
         border-bottom: 1px solid #f3eded;
+        justify-content: flex-start;
     }
     .novelClass>.novelList>ul {
         display: -webkit-box;
@@ -83,6 +87,7 @@
         flex-wrap: wrap;
         margin-left: 1rem;
         margin-right: 1rem;
+        justify-content: flex-start;
     }
     .novelClass>.novelList>ul>li {
         width: 33.3%;
@@ -90,7 +95,6 @@
         flex-direction: column;
     }
     .novelClass>.novelList>ul>li>.name {
-        
         font-weight: 700;
         font-size: .8rem;
         margin-bottom: .1rem;
@@ -98,8 +102,8 @@
         line-height: 1.3rem;
     }
     .novelClass>.novelList>ul>li>.bookCount {
-      
         color: #959595;
         text-align: center;
     }
+    
 </style>
