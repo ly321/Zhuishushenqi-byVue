@@ -8,6 +8,8 @@ export default {
         rankcolor: false,
         search: false,
         searchcolor: false,
+
+        //本打算用同一个state，但MenuName.vue中有点击的与其同名，故使用2个state，因水平所限，暂未想到好方法。
     },
     mutations: {
         UPDATEBOOKSHELF(state) {
