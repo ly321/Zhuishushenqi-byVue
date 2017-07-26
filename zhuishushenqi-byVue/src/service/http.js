@@ -43,3 +43,22 @@ export function getNovel(link) {
         console.error(err)
     })
 }
+
+//获取排行
+export function getRank() {
+    return axios.get(`${url}/ranking/gender`).then((res) => {
+
+        return res.data;
+    }).catch((err) => {
+        console.error(err);
+    })
+}
+
+//获取排行下小说
+export function getRankBook(id) {
+    return axios.get(`${url}/ranking/id`).then((res) => {
+        return res.data;
+    }).catch((err) => {
+        console.error(err);
+    })
+}
