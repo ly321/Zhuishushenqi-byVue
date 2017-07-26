@@ -6,6 +6,7 @@
       <Gheader ></Gheader>
       <Bookshelf :class="bookshelf?'':'hide'"></Bookshelf>
       <NovelClass :class="bookclass?'':'hide'"></NovelClass>
+      <Rank :class="rank?'':'hide'"></Rank>
       <MenuName></MenuName>
     </div>
     <div class="cover"></div>
@@ -17,6 +18,7 @@
   import Bookshelf from './components/Bookshelf'
   import MenuName from './components/MenuName'
   import NovelClass from './components/NovelClass'
+  import Rank from './components/Rank.vue'
   export default {
     name: 'app',
     data() {
@@ -27,6 +29,7 @@
       Gheader: Header,
       MenuName,
       NovelClass,
+      Rank,
     },
      computed: {
             bookshelf(){
@@ -34,6 +37,9 @@
             },
             bookclass(){
               return this.$store.state.menuName.bookclass;
+            },
+            rank(){
+              return this.$store.state.menuName.rank;
             }
         },
   }

@@ -1,18 +1,10 @@
 <template>
 <div class="rank">
-    <div class="man">
+    <div class="male">
         <p>男生</p>
-        <ul>
-            <li>
-                <img src="" alt="">
-            </li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+       
     </div>
+    
 </div>  
 </template>
 <script>
