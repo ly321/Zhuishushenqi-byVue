@@ -3,7 +3,7 @@
     <div class="cover">
     </div>
     <div id="app">
-      <Gheader ></Gheader>
+      <Gheader></Gheader>
       <Bookshelf :class="bookshelf?'':'hide'"></Bookshelf>
       <NovelClass :class="bookclass?'':'hide'"></NovelClass>
       <Rank :class="rank?'':'hide'"></Rank>

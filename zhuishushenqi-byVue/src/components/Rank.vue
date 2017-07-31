@@ -9,10 +9,11 @@
                 </li>
                 <li>
                     <ul>
-                        <li>
+                        <li  class='otherRank'>
+                            <div>
                             <img src="../assets/more.png" alt="">
-                            <span>别人家的排行榜</span>
-                            <span><img src="../assets/list.png" alt=""></span>
+                            <span>别人家的排行榜</span></div>
+                            <span><img  src="../assets/list.png" alt=""></span>
                         </li>
                         <li v-for="maleOther in malesOther" v-bind:key='maleOther.id'>
                             <img :src="`//statics.zhuishushenqi.com${maleOther.cover}`" alt="">
@@ -29,6 +30,12 @@
                 </li>
                 <li>
                     <ul>
+                        <li  class='otherRank'>
+                            <div>
+                            <img src="../assets/more.png" alt="">
+                            <span>别人家的排行榜</span></div>
+                            <span><img  src="../assets/list.png" alt=""></span>
+                        </li>
                         <li v-for="femaleOther in femalesOther" v-bind:key='femaleOther.id'>
                             <img :src="`//statics.zhuishushenqi.com${femaleOther.cover}`" alt="">
                             <span>{{femaleOther.title}}</span>
@@ -70,6 +77,7 @@
     }
 </script>
 <style>
+   
     img {
         width: 1.2rem;
         margin-right: .5rem;
@@ -81,7 +89,7 @@
         flex-direction: column;
         justify-content: flex-start;
     }
-    .people{
+    .people {
         display: block;
         width: 100%;
         height: inherit;
@@ -91,6 +99,7 @@
         background-color: #f9f0f0;
         margin: 0;
         padding: .5rem 0 .5rem 1rem;
+        font-size: 1.2rem;
     }
     .rank>.people>ul {
         display: block;
@@ -109,16 +118,18 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        font-size: .8rem;
         line-height: 2.4rem;
         margin-left: 1rem;
         margin-right: 1rem;
         border-bottom: .01rem solid #f3f3f3;
-            font-size: .8rem;
-    line-height: 2.4rem;
+        line-height: 2.4rem;
+    }
+    .rank>.people>ul>li>span {
+        font-size: 1rem
     }
     .rank>.people>ul>li>ul {
         display: block;
+        width: 100%;
     }
     .rank>.people>ul>li>ul>li {
         display: -webkit-box;
@@ -134,13 +145,16 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        font-size: .8rem;
         line-height: 2.4rem;
-        margin-left: 1rem;
         margin-right: 1rem;
         border-bottom: .01rem solid #f3f3f3;
-            font-size: .8rem;
-    line-height: 2.4rem;
+        line-height: 2.4rem;
+    }
+    .rank>.people>ul>li>ul>li>span {
+        font-size: 1rem;
+    }
+    .rank>.people>ul>li>ul>.otherRank{
+        justify-content: space-between ;
     }
 </style>
 

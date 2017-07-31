@@ -1,6 +1,7 @@
 <template>
     <div class="header">
-        <p>{{title}}</p>
+        <p >{{title}}</p>
+        <p v-html="datas">{{datas}}</p>
     </div>
 </template>
 <script>
@@ -8,12 +9,20 @@
         name: 'header',
         data() {
             return {
-
+                
             }
         },
         computed:{
             title(){
+                if(this.$store.state.header.title==='搜索'){
+                    return '';
+                }
                 return this.$store.state.header.title;
+            },
+            datas(){
+                if(this.$store.state.header.title==='搜索'){
+                    return '<input type="text">';
+                }
             }
         }
     }
