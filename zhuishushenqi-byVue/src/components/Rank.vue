@@ -9,10 +9,10 @@
                 </li>
                 <li>
                     <ul>
-                        <li  class='otherRank'>
+                        <li class='otherRank'>
                             <div>
-                            <img src="../assets/more.png" alt="">
-                            <span>别人家的排行榜</span></div>
+                                <img src="../assets/more.png" alt="">
+                                <span>别人家的排行榜</span></div>
                             <span><img  src="../assets/list.png" alt=""></span>
                         </li>
                         <li v-for="maleOther in malesOther" v-bind:key='maleOther.id'>
@@ -30,10 +30,10 @@
                 </li>
                 <li>
                     <ul>
-                        <li  class='otherRank'>
+                        <li class='otherRank'>
                             <div>
-                            <img src="../assets/more.png" alt="">
-                            <span>别人家的排行榜</span></div>
+                                <img src="../assets/more.png" alt="">
+                                <span>别人家的排行榜</span></div>
                             <span><img  src="../assets/list.png" alt=""></span>
                         </li>
                         <li v-for="femaleOther in femalesOther" v-bind:key='femaleOther.id'>
@@ -77,7 +77,6 @@
     }
 </script>
 <style>
-   
     img {
         width: 1.2rem;
         margin-right: .5rem;
@@ -125,7 +124,7 @@
         line-height: 2.4rem;
     }
     .rank>.people>ul>li>span {
-        font-size: 1rem
+        font-size: 1.1rem
     }
     .rank>.people>ul>li>ul {
         display: block;
@@ -153,8 +152,9 @@
     .rank>.people>ul>li>ul>li>span {
         font-size: 1rem;
     }
-    .rank>.people>ul>li>ul>.otherRank{
-        justify-content: space-between ;
+    .rank>.people>ul>li>ul>.otherRank {
+        justify-content: space-between;
+        font-size: 1.1rem;
     }
 </style>
 
