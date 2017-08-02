@@ -104,18 +104,9 @@
         display: block;
     }
     .rank>.people>ul>li {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
         flex-direction: row;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
         justify-content: flex-start;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
         line-height: 2.4rem;
         margin-left: 1rem;
@@ -131,18 +122,9 @@
         width: 100%;
     }
     .rank>.people>ul>li>ul>li {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
         flex-direction: row;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
         justify-content: flex-start;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
         line-height: 2.4rem;
         margin-right: 1rem;

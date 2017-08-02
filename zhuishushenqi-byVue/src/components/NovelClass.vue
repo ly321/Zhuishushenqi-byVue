@@ -76,14 +76,8 @@
         justify-content: flex-start;
     }
     .novelClass>.novelList>ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
         flex-direction: row;
-        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         margin-left: 1rem;
         margin-right: 1rem;

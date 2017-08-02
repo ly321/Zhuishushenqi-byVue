@@ -7,6 +7,7 @@
       <Bookshelf :class="bookshelf?'':'hide'"></Bookshelf>
       <NovelClass :class="bookclass?'':'hide'"></NovelClass>
       <Rank :class="rank?'':'hide'"></Rank>
+      <Search :class="search?'':'hide'"></Search>
       <MenuName></MenuName>
     </div>
     <div class="cover"></div>
@@ -19,6 +20,7 @@
   import MenuName from './components/MenuName'
   import NovelClass from './components/NovelClass'
   import Rank from './components/Rank.vue'
+  import Search from './components/Search.vue'
   export default {
     name: 'app',
     data() {
@@ -30,6 +32,7 @@
       MenuName,
       NovelClass,
       Rank,
+      Search,
     },
      computed: {
             bookshelf(){
@@ -40,6 +43,9 @@
             },
             rank(){
               return this.$store.state.menuName.rank;
+            },
+            search(){
+              return this.$store.state.menuName.search;
             }
         },
   }
