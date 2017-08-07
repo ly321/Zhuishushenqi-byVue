@@ -77,4 +77,10 @@
             position: fixed;
         }
     }
+    @media(min-width:414px){
+        .search-head{
+            width: 100%;
+            position: absolute;
+        }
+    }
 </style>

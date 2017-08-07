@@ -19,6 +19,7 @@
   .search {
     width: 100%;
     padding: 1rem;
+    height: inherit;
   }
   .search-history {
     width: inherit;
@@ -37,6 +38,14 @@
     width: .8rem;
     height: 1rem;
     vertical-align: middle;
+  }
+  @media(min-width:414px){
+    .search-history{
+      width: 100%;
+      position: absolute;
+      top: 50px;
+      height: 50px;
+    }
   }
 </style>
 

@@ -87,6 +87,7 @@
         height: inherit;
         flex-direction: column;
         justify-content: flex-start;
+        overflow-y: auto;
     }
     .people {
         display: block;
