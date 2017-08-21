@@ -1,10 +1,12 @@
 <template>
     <div class="list">
         <Headertwo></Headertwo>
+        <ListTwo></ListTwo>
     </div>
 </template>
 <script>
 import Headertwo from '../components/Headertwo'
+import ListTwo from '../components/ListTwo'
 export default {
   name:'list',
   data(){
@@ -14,6 +16,7 @@ export default {
   },
   components:{
       Headertwo,
+      ListTwo
   }
 }
 </script>

@@ -62,3 +62,12 @@ export function getRankBook(id) {
         console.error(err);
     })
 }
+
+//获取分类下小列表
+export function getCatalogList() {
+    return axios.get(`${url}//cats/lv2`).then((res) => {
+        return res.data;
+    }).catch((err) => {
+        console.error(err);
+    })
+}
