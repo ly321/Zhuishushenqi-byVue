@@ -63,6 +63,7 @@ export function getRankBook(id) {
     }).catch((err) => {
         console.error(err);
     })
+<<<<<<< HEAD
 }
 
 //获取分类下小列表
@@ -72,4 +73,6 @@ export function getCatalogList() {
     }).catch((err) => {
         console.error(err);
     })
+=======
+>>>>>>> parent of b53dd1a... 分类列表起步
 }
