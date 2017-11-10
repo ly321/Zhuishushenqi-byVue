@@ -11,6 +11,7 @@ export default {
             state.females = res.female;
             state.presses = res.press;
         },
+       
     },
     actions: {
         updateDate(context) {

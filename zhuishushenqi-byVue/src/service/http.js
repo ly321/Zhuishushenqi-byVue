@@ -12,7 +12,9 @@ export function getNovelClass() {
 
 //获取分类小说列表
 export function getNovelList(gender, type, major, minor, start, limit) {
-    return axios.get(`${url}/book/by-categories?gender=${gender}&type=${type}&major=${major}&minor=${minor}&start=${start}&limit=${limit}`).then((res) => {
+    let urlx=`${url}/book/by-categories?gender=${gender}&type=${type}&major=${major}&minor=${minor}&start=${start}&limit=${limit}`;
+    console.log(urlx);
+    return axios.get(urlx).then((res) => {
         return res.data;
     }).catch((err) => {
         console.error(err)
@@ -65,7 +67,7 @@ export function getRankBook(id) {
 
 //获取分类下小列表
 export function getCatalogList() {
-    return axios.get(`${url}//cats/lv2`).then((res) => {
+    return axios.get(`${url}/cats/lv2`).then((res) => {
         return res.data;
     }).catch((err) => {
         console.error(err);

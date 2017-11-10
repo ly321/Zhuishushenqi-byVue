@@ -2,9 +2,9 @@
     <div class="headertwo">
         <span>
                 <img src="../assets/leftarrow.png" alt="">
-                <p>返回</p>
+                <p @click="returnHome()">返回</p>
             </span>
-        <p>玄幻</p>
+        <p>{{title}}</p>
     </div>
 </template>
 <script>
@@ -14,16 +14,28 @@
             return {}
         },
         methods: {
+            returnHome(){
+                this.$router.push(
+                    {
+                        path:'/'
+                    }
+                )
+            }
         },
+        computed:{
+            title(){
+                return this.$store.state.listTwo.title;
+            }
+        }
     }
 </script>
 
 <style>
-    img {
+    .headertwo img {
         width: 16px;
         height: 16px;
     }
-    p {
+    .headertwo p {
         color: #ffffff;
     }
     .headertwo {

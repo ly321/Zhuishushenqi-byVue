@@ -2,11 +2,13 @@
     <div class="list">
         <Headertwo></Headertwo>
         <ListTwo></ListTwo>
+        <Bookview></Bookview>
     </div>
 </template>
 <script>
 import Headertwo from '../components/Headertwo'
 import ListTwo from '../components/ListTwo'
+import Bookview from '../components/Bookview'
 export default {
   name:'list',
   data(){
@@ -16,7 +18,8 @@ export default {
   },
   components:{
       Headertwo,
-      ListTwo
+      ListTwo,
+        Bookview
   }
 }
 </script>

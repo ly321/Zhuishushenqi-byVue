@@ -9,15 +9,32 @@
         </ul>
         <ul class="otherList">
             <li>全部</li>
+            <li v-for="item in booklist" v-bind:key="item.id">
+                {{item}}
+            </li>
         </ul>
     </div>
 </template>
+
 <script>
     export default {
         name: 'listTwo',
         data() {
             return {
             }
+        },
+        methods:{
+            dispatch(name,sex){
+                this.$store.dispatch('updateBooklist',{name,sex})
+            }
+        },
+        computed:{
+            booklist(){
+                return this.$store.state.listTwo.booklist;
+            }
+        },
+         mounted() {
+            this.dispatch(this.$route.query.name,this.$route.query.sex);
         }
     }
 </script>
@@ -30,7 +47,7 @@
         z-index: 10;
         display: block;
     }
-    ul{
+    .listTwo ul{
           
     flex-direction: row;
 
@@ -43,7 +60,7 @@
     border-bottom: 1px solid #f2f2f2;
     }
    
-    ul>li{
+    .listTwo ul>li{
             flex-shrink: 0;
     line-height: 2rem;
     padding-left: .6rem;
