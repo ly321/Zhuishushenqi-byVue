@@ -1,20 +1,14 @@
 <template>
     <div class="list">
         <Headertwo></Headertwo>
-<<<<<<< HEAD
         <ListTwo></ListTwo>
-        <Bookview></Bookview>
-=======
->>>>>>> parent of b53dd1a... 分类列表起步
+        <Booklist></Booklist>
     </div>
 </template>
 <script>
 import Headertwo from '../components/Headertwo'
-<<<<<<< HEAD
 import ListTwo from '../components/ListTwo'
-import Bookview from '../components/Bookview'
-=======
->>>>>>> parent of b53dd1a... 分类列表起步
+import Booklist from '../components/Booklist'
 export default {
   name:'list',
   data(){
@@ -24,11 +18,8 @@ export default {
   },
   components:{
       Headertwo,
-<<<<<<< HEAD
       ListTwo,
-        Bookview
-=======
->>>>>>> parent of b53dd1a... 分类列表起步
+        Booklist
   }
 }
 </script>
@@ -36,6 +27,8 @@ export default {
 .list{
     width: 100%;
     height: inherit;
+    position: relative;
+    display: block;
 }
  @media(min-width:414px){
         .list{

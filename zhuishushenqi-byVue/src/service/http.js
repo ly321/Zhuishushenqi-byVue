@@ -13,7 +13,6 @@ export function getNovelClass() {
 //获取分类小说列表
 export function getNovelList(gender, type, major, minor, start, limit) {
     let urlx=`${url}/book/by-categories?gender=${gender}&type=${type}&major=${major}&minor=${minor}&start=${start}&limit=${limit}`;
-    console.log(urlx);
     return axios.get(urlx).then((res) => {
         return res.data;
     }).catch((err) => {
@@ -58,12 +57,11 @@ export function getRank() {
 
 //获取排行下小说
 export function getRankBook(id) {
-    return axios.get(`${url}/ranking/id`).then((res) => {
+    return axios.get(`${url}/ranking/${id}`).then((res) => {
         return res.data;
     }).catch((err) => {
         console.error(err);
     })
-<<<<<<< HEAD
 }
 
 //获取分类下小列表
@@ -73,6 +71,29 @@ export function getCatalogList() {
     }).catch((err) => {
         console.error(err);
     })
-=======
->>>>>>> parent of b53dd1a... 分类列表起步
+}
+//获取小说详情
+export function getBook(id){
+    return axios.get(`${url}/book/${id}`).then((res)=>{
+        return res.data;
+    }).catch(err=>{
+        console.error(err);
+    })
+}
+
+//搜索自动补充
+export function getAutoSearch(query){
+    return axios.get(`${url}/book/auto-complete?query=${query}`).then(res=>{
+        return res.data.keywords;
+    }).catch(err=>{
+        console.error(err);
+    })
+}
+//搜素具体内容
+export function getSearch(query){
+    return axios.get(`${url}/book/fuzzy-search?query=${query}`).then(res=>{
+        return res.data;
+    }).catch(err=>{
+        console.error(err); 
+    })
 }
