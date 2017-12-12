@@ -20,7 +20,8 @@
               </div>
           </div>
           <div class="book_btn">
-            <button @click="add(bookDetail._id,bookDetail.title,bookDetail.cover,bookDetail.updated,bookDetail.lastChapter)">追更新</button>
+            <button v-if="canAdd" @click="add(bookDetail._id,bookDetail.title,bookDetail.cover,bookDetail.updated,bookDetail.lastChapter)">追更新</button>
+            <button class="awayShelf" v-if="!canAdd" @click="away(bookDetail._id)">撤出书架</button>
             <button @click="reading()">开始阅读</button>
           </div>
           <div class="book_number">
@@ -59,16 +60,34 @@ export default {
   name: "bookview",
   data() {
     return {
-      isHidden: true
+      isHidden: true,
+     
     };
   },
   methods: {
     add(_id,title,cover,updated,lastChapter) {
-      console.log(_id);
+      let arr=[];
+      if(localStorage.books_str&&localStorage.books_str.length){
+         arr=JSON.parse(localStorage.books_str);
+      }
+        arr.push({_id,title,cover,updated,lastChapter});
+         localStorage.books_str=JSON.stringify(arr)
       this.$store.commit('ADDBOOK',{_id,title,cover,updated,lastChapter});
       this.$router.push({
         path:'/',
       });
+    },
+    away(id){
+       let arr=JSON.parse(localStorage.books_str);
+       for(var i=0;i<arr.length;i++){
+         if(arr[i]._id===id){
+           arr.splice(i,1);
+         }
+       }
+       localStorage.books_str=JSON.stringify(arr);
+       console.log(localStorage);
+       this.canAdd=true;
+       console.log(this.canAdd);
     },
     reading() {
         this.$router.push({
@@ -106,8 +125,19 @@ export default {
   computed: {
     bookDetail() {
       return this.$store.state.book.bookDetail;
+    },
+    canAdd:{
+      get(){
+        let arr=JSON.parse(localStorage.books_str);
+        return !(arr.some(data=>data._id===this.$route.params.id));
+      },
+      set(v){
+        console.log('v='+v);
+        return v;
+      }
     }
   },
+
   mounted() {
     this.dispatch(this.$route.params.id);
   }
@@ -266,6 +296,12 @@ export default {
   height: 16px;
   position: relative;
   top: 0.23rem;
+}
+
+.awayShelf{
+      border: 1px solid #999 !important;
+    background-color: #999 !important;
+    color: #fff !important;
 }
 </style>
 
