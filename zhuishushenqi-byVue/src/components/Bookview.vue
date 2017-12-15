@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       isHidden: true,
-     
+      canAdd:true,
     };
   },
   methods: {
@@ -126,20 +126,29 @@ export default {
     bookDetail() {
       return this.$store.state.book.bookDetail;
     },
-    canAdd:{
-      get(){
-        let arr=JSON.parse(localStorage.books_str);
-        return !(arr.some(data=>data._id===this.$route.params.id));
-      },
-      set(v){
-        console.log('v='+v);
-        return v;
-      }
+    // canAdd:{
+    //   get(){
+    //     let arr=JSON.parse(localStorage.books_str);
+    //     return !(arr.some(data=>data._id===this.$route.params.id));
+    //   },
+    //   set(v){
+    //     console.log('v='+v);
+    //     return v;
+    //   }
+    // }
+  },
+  watch:{
+    canAdd(val){
+      let arr=JSON.parse(localStorage.books_str);
+     return !(arr.some(data=>data._id===this.$route.params.id));
     }
   },
-
   mounted() {
     this.dispatch(this.$route.params.id);
+    let arr=JSON.parse(localStorage.books_str);
+     if(arr.some(data=>data._id===this.$route.params.id)){
+       this.canAdd=false;
+     }
   }
 };
 </script>
@@ -148,6 +157,7 @@ export default {
   margin-top: 48px;
   display: block;
   width: 100%;
+  height: inherit;
 }
 .bookview .book_header {
   width: 100%;

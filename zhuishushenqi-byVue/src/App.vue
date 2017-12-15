@@ -4,7 +4,7 @@
     </div>
     <div id="app">
       
-      <router-view></router-view>
+      <router-view ></router-view>
     </div>
     <div class="cover"></div>
   </div>

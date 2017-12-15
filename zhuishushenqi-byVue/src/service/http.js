@@ -39,6 +39,7 @@ export function getCatalog(id) {
 //获取书籍内容
 export function getNovel(link) {
     return axios.get(`${url}/chapter/${link}?k=2124b73d7e2e1945&t=1468223717`).then((res) => {
+        console.log(`${url}/chapter/${link}?k=2124b73d7e2e1945&t=1468223717`);
         return res.data;
     }).catch((err) => {
         console.error(err)

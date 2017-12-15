@@ -31,7 +31,7 @@ export default {
   name: "search",
   data() {
     return {
-      search_value:''
+      search_value:'',
     };
   },
   components:{

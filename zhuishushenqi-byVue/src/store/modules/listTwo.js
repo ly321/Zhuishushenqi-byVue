@@ -5,6 +5,8 @@ export default{
         booklist:[],
         rankList:{},
         novelBody:'',
+        pageID:'',
+        chaptets:[],
     },
     mutations:{
         UPDATEBOOKLIST(state,res){
@@ -18,6 +20,12 @@ export default{
             arr=arr.map(data=>`<p>${data}</p>`)
             res=arr.join('');
             state.novelBody=`<p>${res}</p>`;
+        },
+        UPDATEPAGEID(state,res){
+            state.pageID=res;
+        },
+        UPDATECHAPTERS(state,res){
+            state.chapters=res;
         }
     },
     actions:{
@@ -42,20 +50,28 @@ export default{
                 context.commit('UPDATEBOOKTITLE','书籍详情');
             })
         },
-
         updatebookcontent(context,{id,page}){
             getChangeSource(id).then(res=>{
-                        return res[1]._id;
+                context.commit('UPDATEPAGEID',res[5]._id)
+                return res[5]._id;
             }).then(data=>{
                 getCatalog(data).then(res=>{
-                    context.commit('UPDATEBOOKTITLE',res.chapters[page-1].title);
-                    return res.chapters[page-1].link
-            }).then(link=>{
-                getNovel(link).then(res=>{
-                    context.commit('UPDATEBODY',res.chapter.body);
+                    context.commit('UPDATECHAPTERS',res.chapters);
+                    return res.chapters
+                }).then(data=>{
+                    page=parseInt(page);
+                    getNovel(data[page-1].link).then(res=>{
+                        context.commit('UPDATEBODY',res.chapter.body);
+                        context.commit('UPDATEBOOKTITLE',res.chapter.title);
+                    }) 
                 })
             })
-         })    
+        },
+        loadingbookcontent(context,{chapters,page}){
+                getNovel(chapters[page].link).then(res=>{
+                    context.commit('UPDATEBODY',res.chapter.body);
+                    context.commit('UPDATEBOOKTITLE',res.chapter.title);
+                })
         }
     }
 }

@@ -24,7 +24,13 @@ export default {
       } else if (str.match(/\/rank/)) {
         this.$router.push("/ranking");
       } else if (str.match(/\/book/)) {
-        this.$router.back(-1);
+        if(this.$route.params.page){
+          this.$router.push({
+            path:`/book/${this.$route.params.id}`
+          })
+        }else{
+        this.$router.push("/category");
+        }
       }
     },
     returnHome() {

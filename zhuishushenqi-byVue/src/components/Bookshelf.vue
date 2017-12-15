@@ -98,6 +98,7 @@ export default {
 .bookshelf > .shelf {
   display: block;
   width: inherit;
+  height: inherit;
 }
 .bookshelf > .shelf > ul {
   display: block;

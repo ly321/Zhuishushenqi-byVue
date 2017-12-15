@@ -12,7 +12,8 @@ import NovelClass from "../components/NovelClass.vue";
 export default {
   name: "category",
   data() {
-    return {};
+    return {
+    };
   },
   components: {
     Gheader: Header,

@@ -23,11 +23,12 @@ export default {
   mounted(){
       let id=this.$route.params.id,
       page=this.$route.params.page;
-      this.$store.dispatch('updatebookcontent',{
-          id,
-          page
+        this.$store.dispatch('updatebookcontent',{
+            id,
+          page,
       })
-  }
+
+    }
 }
 </script>
 <style>
